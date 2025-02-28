@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="center margin-2">
+    <h1>Hello Go </h1>
+    <form action="/submit" method="POST">
+        <input type="text" name="name" placeholder="name">
+        <input placeholder="number of tickets" type="number" value="1" >
+        <button type="submit">Send</button>
+    </form>
+
+    <h2 id="response" class=""></h2>  
+</div>
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit", async (e) => {
+        e.preventDefault(); // Evita il refresh della pagina
+        const formData = new FormData(e.target);
+        const response = await fetch("/submit", {
+            method: "POST",
+            body: formData
+        });
+        const text = await response.text();
+        document.getElementById("response").innerText = text;
+    });
+</script>

@@ -1,0 +1,13 @@
+.center{
+text-align: center;
+}
+
+.margin-2{
+    margin: 10% 2%;
+}
+
+html,body{
+    color: rgb(93, 151, 212);
+    background-color: rgb(22, 22, 22);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
